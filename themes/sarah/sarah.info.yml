@@ -4,6 +4,7 @@ base theme: classy
 description: 'A personalized theme for me.'
 core_version_requirement: ^8 || ^9
 libraries:
+- core/normalize
 - sarah/global
 
 regions:
