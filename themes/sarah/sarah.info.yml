@@ -1,0 +1,7 @@
+name: sarah
+type: theme
+base theme: classy
+description: 'A personalized theme for me.'
+core_version_requirement: ^8 || ^9
+libraries:
+- sarah/global
