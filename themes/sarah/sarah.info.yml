@@ -5,3 +5,16 @@ description: 'A personalized theme for me.'
 core_version_requirement: ^8 || ^9
 libraries:
 - sarah/global
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  content: Content
+  help: Help
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  footer: 'Footer'
