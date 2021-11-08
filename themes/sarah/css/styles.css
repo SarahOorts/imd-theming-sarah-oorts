@@ -1,3 +1,58 @@
 body {
     background-color: hotpink;
 }
+
+.container {
+	max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.textimg{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    margin: 50px;
+}
+
+.textimg > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textimg-img img{    
+    /* width: 90%;
+    height: 90%; */
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.textimg-text{
+    flex-direction: column;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 1000px)  {
+    .col-md-6 {
+        width: 50%;	
+    }
+
+    .textimg{
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 1fr;
+        margin: 50px;
+    }
+}
