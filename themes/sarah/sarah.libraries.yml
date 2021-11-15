@@ -6,6 +6,7 @@ global:
 
   js:
     js/index.js: {}
+    js/nav.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
