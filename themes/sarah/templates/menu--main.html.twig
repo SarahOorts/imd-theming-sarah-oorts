@@ -1,0 +1,59 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+#}
+
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('nav-menu') }}>
+    {% else %}
+      <ul class="nav-menu">
+    {% endif %}
+    {% for item in items %}
+      {%
+        set classes = [
+          'nav-menu-item',
+          item.is_expanded ? 'nav-menu-item--expanded',
+          item.is_collapsed ? 'nav-menu-item--collapsed',
+          item.in_active_trail ? 'nav-menu-item--active-trail',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+      <div class="hamburger-menu">
+        <div class="hamburger-stripe"> </div>
+        <div class="hamburger-stripe hamburger-stripe-closed"> </div>
+        <div class="hamburger-stripe"> </div>
+        <div class="hamburger-menu-item hidden">
+            {% for item in items %}
+              {%
+                set classes = [
+                  'nav-hamburger-menu-item',
+                  item.is_expanded ? 'nav-hamburger-menu-item--expanded',
+                  item.is_collapsed ? 'nav-hamburger-menu-item--collapsed',
+                  item.in_active_trail ? 'nav-hamburger-menu-item--active-trail',
+                ]
+              %}
+              <li{{ item.attributes.addClass(classes) }}>
+                {{ link(item.title, item.url) }}
+                {% if item.below %}
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+        </div>
+      </div>
+    </ul>
+  {% endif %}
+{% endmacro %}
