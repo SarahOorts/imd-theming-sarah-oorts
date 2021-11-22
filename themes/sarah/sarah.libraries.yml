@@ -10,9 +10,3 @@ global:
     - core/jquery
     - core/jquery.once
     - core/drupal
-
-paragraph:
-  version: VERSION
-  css:
-    component:
-      css/paragraph.css: {}
