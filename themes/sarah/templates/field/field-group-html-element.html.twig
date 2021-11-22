@@ -1,0 +1,12 @@
+<{{ wrapper_element }} {{ attributes }} {{attributes.addClass("head")}}>
+  {% if title %}
+  <{{ title_element }}{{ title_attributes }}>{{ title }}</{{ title_element }}>
+  {% endif %}
+  {% if collapsible %}
+  <div class="field-group-wrapper">
+  {% endif %}
+  {{children}}
+  {% if collapsible %}
+  </div>
+  {% endif %}
+</{{ wrapper_element }}>

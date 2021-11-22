@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    paragraph.field_theme.value ? "quote--theme--" ~ paragraph.field_theme.value|clean_class,
+    paragraph.field_border.value ? "quote--border--" ~ paragraph.field_border.value|clean_class
+  ]
+%}
+
+<div{{ attributes.addClass(classes, "video-vertical") }}>
+  <div class="video-mp4">
+    {{content.field_embed_video}}
+  </div>
+  <div class="video-body">
+    {{ content|without("field_embed_video") }}
+  </div>  
+</div>
