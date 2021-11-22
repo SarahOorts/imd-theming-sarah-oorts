@@ -28,7 +28,7 @@
                 open = false;
               } else {
                 hamburgeritem.removeClass("hidden");                
-                $(".nav-menu").css("padding-bottom", "230px");
+                $(".nav-menu").css("padding-bottom", "250px");
                 $(".nav-menu").css("background-color", "rgb(0, 0, 0, 1");
                 console.log("test 4");
                 open = true;
