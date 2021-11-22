@@ -5,9 +5,14 @@ global:
       css/styles.css: {}
 
   js:
-    js/index.js: {}
     js/nav.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+paragraph:
+  version: VERSION
+  css:
+    component:
+      css/paragraph.css: {}
